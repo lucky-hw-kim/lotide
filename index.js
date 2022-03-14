@@ -8,6 +8,7 @@ const assertObjectsEqual = require('./assertObjectsEqual');
 const assertArraysEqual = require('./assertArraysEqual');
 const eqArraysRecursive = require('./eqArraysRecursive');
 const eqArrays = require('./eqArrays');
+const eqObjects = require('./eqObjects');
 const eqObjectsRecursive = require('./eqObjectsRecursive');
 const findKey = require('./findKey');
 const findKeyByValue = require('./findKeyByValue');
@@ -16,6 +17,7 @@ const letterPositions = require('./letterPositions');
 const map = require('./map');
 const takeUntil= require('./takeUntil');
 const without = require('./without');
+
 
 module.exports = {
   head,
@@ -28,6 +30,7 @@ module.exports = {
   eqArraysRecursive,
   assertObjectsEqual,
   assertArraysEqual,
+  eqObjects,
   eqObjectsRecursive,
   findKey,
   findKeyByValue,

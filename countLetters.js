@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual')
-
 function countLetters (str) {
   const result = {}
   const noSpace = str.split(' ').join('').toLowerCase()
