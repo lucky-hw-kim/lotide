@@ -36,5 +36,3 @@ describe("#head", () => {
 
 });
 
-
-// functions.assertEqual(functions.head(['c']), 'c')

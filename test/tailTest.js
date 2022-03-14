@@ -1,11 +1,37 @@
-const functions = require('../tail')
+const tail = require('../tail')
+const assert = require('chai').assert
 
-const result = functions.tail(['Hello', 'Lighthouse', 'Labs'])
-functions.assertEqual(result.length, 2) // ensure we get back two elements
-functions.assertEqual(result[0], 'Lighthouse') // ensure first element is "Lighthouse"
-functions.assertEqual(result[1], 'Labs') // ensure second element is "Labs"
+describe('#tail', () => {
+  it("should return ['Lighthouse', 'Labs'] for result", () => {
+    const result = tail(['Hello', 'Lighthouse', 'Labs'])
+    assert.deepEqual(result, ['Lighthouse', 'Labs'])
+  })
 
-// Test Case: Check the original array
-const words = ['Yo Yo', 'Lighthouse', 'Labs']
-functions.tail(words) // no need to capture the return value since we are not checking it
-functions.assertEqual(words.length, 3) // original array should still have 3 elements!
+  it("should return 2 for result.length", () => {
+    const result = tail(['Hello', 'Lighthouse', 'Labs'])
+    assert.equal(result.length, 2)
+  })
+
+  it("should return 2 for result.length", () => {
+    const result = tail(['Hello', 'Lighthouse', 'Labs'])
+    assert.equal(result[0], 'Lighthouse')
+  })
+
+  it("should return 2 for result.length", () => {
+    const result = tail(['Hello', 'Lighthouse', 'Labs'])
+    assert.equal(result[1], 'Labs')
+  })
+
+  it("should return ['Lighthouse', 'Labs'] for result", () => {
+    const result = tail(['Yo Yo', 'Lighthouse', 'Labs']);
+    assert.deepEqual(result, ['Lighthouse', 'Labs'])
+  })
+
+  it("should return 3 for words.length", () => {
+    const words = ['Yo Yo', 'Lighthouse', 'Labs'];
+    const result = tail(['Yo Yo', 'Lighthouse', 'Labs']);
+    assert.deepEqual(words.length, 3)
+  })
+
+});
+

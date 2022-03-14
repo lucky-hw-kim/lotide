@@ -1,5 +1,5 @@
-const eqArrays = require('./eqArrays');
-const assertArraysEqual = require('./assertArraysEqual');
+// const eqArrays = require('./eqArrays');
+// const assertArraysEqual = require('./assertArraysEqual');
 
 function middle (arr) {
   const resultArr = []
@@ -18,4 +18,4 @@ function middle (arr) {
   }
 }
 
-module.exports = {middle, assertArraysEqual, eqArrays}
+module.exports = middle
