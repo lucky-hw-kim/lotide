@@ -1,8 +1,7 @@
 /* eslint-disable no-unreachable-loop */
 const eqArrays = require('./eqArrays')
-const assertEqual = require('./assertEqual')
 
-const eqObjects = function (object1, object2) {
+const eqObjectsRecursive = function (object1, object2) {
   const obj1Keys = Object.keys(object1)
   const obj2Keys = Object.keys(object2)
   if (obj1Keys.length !== obj2Keys.length) {
@@ -28,6 +27,7 @@ const eqObjects = function (object1, object2) {
   return true
 }
 
+module.exports = eqObjectsRecursive;
 // const ab = { a: '1', b: '2' }
 // const ba = { b: '2', a: '1' }
 // assertEqual(eqObjects(ab, ba), true) // => true
@@ -42,8 +42,8 @@ const eqObjects = function (object1, object2) {
 // const cd2 = { c: '1', d: ['2', 3, 4] }
 // assertEqual(eqObjects(cd, cd2), false) // => false
 
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true) // => true
+// assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true) // => true
 
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false) // => false
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false)// => false
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2, d: [3] }, { a: 1, b: 2 }), false)
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false) // => false
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false)// => false
+// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2, d: [3] }, { a: 1, b: 2 }), false)

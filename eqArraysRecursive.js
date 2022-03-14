@@ -1,6 +1,4 @@
-// FUNCTION IMPRELEMENTATION
-
-function eqArrays (arr1, arr2) {
+function eqArraysRecursive (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false
   }
@@ -18,13 +16,7 @@ function eqArrays (arr1, arr2) {
   return true
 }
 
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`)
-  }
-}
+module.exports = eqArraysRecursive;
 
 // eqArrays([1, 2, 3], [1, 2, 3]) // => treu
 // eqArrays([1, 2, 3], [3, 2, 1]) // => false
@@ -32,7 +24,7 @@ const assertEqual = function (actual, expected) {
 // eqArrays(['1', '2', '3'], ['1', '2', '3']) // => true
 // eqArrays(['1', '2', '3'], ['1', '2', 3]) // => false
 
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true)// => true
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false) // => false
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]),false) // => false
+// assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true)// => true
+// assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false) // => false
+// assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]),false) // => false
 
