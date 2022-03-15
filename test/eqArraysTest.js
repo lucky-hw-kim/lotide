@@ -1,10 +1,22 @@
-const functions = require('../eqArrays')
+const assert = require('chai').assert;
+const eqArrays = require('../eqArrays');
 
-functions.eqArrays([1, 2, 3], [1, 2, 3]) // => true
-functions.eqArrays([1, 2, 3], [3, 2, 1]) // => false
+describe('#eqArrays', () => {
+  it('should return true for [1, 2, 3], [1, 2, 3]', () =>
+  {
+    assert.strictEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)
+  })
 
-functions.eqArrays(['1', '2', '3'], ['1', '2', '3']) // => true
-functions.eqArrays(['1', '2', '3'], ['1', '2', 3]) // => false
+  it('should return false for [1, 2, 3], [3, 2, 1]', () =>
+  {
+    assert.strictEqual(eqArrays([1, 2, 3], [3, 2, 1]), false)
+  })
 
-functions.assertEqual(functions.eqArrays([1, 2, 3], [1, 2, 3]), true) // => should PASS
-functions.assertEqual(functions.eqArrays([1, 3, 2], [1, 2, 3]), false) // => should PASS
+  it("should return false for ['1', '2', '3'], ['1', '2', 3]", () => 
+  {
+    assert.strictEqual(eqArrays([1, 2, 3], [3, 2, 1]), false)
+  })
+
+})
+
+

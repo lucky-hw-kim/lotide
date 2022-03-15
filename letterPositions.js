@@ -18,8 +18,3 @@ const letterPositions = function (sentence) {
 
 module.exports = letterPositions;
 
-
-// console.log(letterPositions('lighthouse in the house'))
-// console.log(letterPositions('hello'))
-// assertArraysEqual(letterPositions('hello').e, [1])
-// assertArraysEqual(letterPositions('lighthouse in the house').e, [9, 16, 22])
